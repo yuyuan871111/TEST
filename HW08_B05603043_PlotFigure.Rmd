@@ -1,0 +1,30 @@
+
+# Name：楊淯元
+# ID：B05603043
+# Subject：PlotFigure
+# Date: 5/7, 2017
+
+---
+title: "HW08_B05603043_PlotFigure"
+output: pdf_document
+---
+##  畫圖
+par：設定視窗參數:(1)mex:邊界文字縮放比，(2)mar:四邊預留距離
+
+plot：畫圖:(1)xlim,ylim:座標軸範圍，(2)xlab,ylab:座標軸名稱，(3)main:主標題名稱，(4)col:點的顏色，(5)pch:點的形狀，(6)cex:文字、符號縮放比（點的大小）
+
+axis：設定座標軸參數:(1)side:哪一邊，(2)col:軸的顏色，(3)col.axis:軸文字的顏色
+
+legend：加上文字（圖例）:(1)位置："topleft"，(2)legend=c("~輸入內容~")
+
+text：加上文字（任何位置）:(1)label=c("~輸入內容~")，(2)expression:數學公式
+
+```{r Data, echo=TRUE}
+par(mex=0.8, mar=c(6, 6, 3, 3))
+plot(iris$Sepal.Length, xlim=c(-10,160), ylim=c(4,8), xlab="PLantID", ylab="Length of Sepal", main="IRIS Data", col="blue", pch=2, cex=0.7)
+axis(side=1, col="green", col.axis="red")
+legend("topleft", legend=c("Plant ID vs Sepal.Length"))
+text(120, 4, label=c("Plot the IRIS data, Sepal.Length"))
+text(120, 4.5, expression(y==x^2+5))
+```
+
